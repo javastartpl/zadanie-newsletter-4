@@ -1,5 +1,5 @@
-public class Task {
-    String task;
+class Task {
+    private String task;
     PRIORITY priority;
 
     Task(String task, PRIORITY priority) {
@@ -7,9 +7,7 @@ public class Task {
         this.priority = priority;
     }
 
-    @Override
-    public String toString() {
-        return "Zadanie " + task +
-                " ma priorytet " + Main.priorityValue;
+    String getTask() {
+        return task;
     }
 }
