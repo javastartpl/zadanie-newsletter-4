@@ -1,13 +1,17 @@
 class Task {
     private String task;
-    PRIORITY priority;
+    private Priority priority;
 
-    Task(String task, PRIORITY priority) {
+    Task(String task, Priority priority) {
         this.task = task;
         this.priority = priority;
     }
 
     String getTask() {
         return task;
+    }
+
+    public Priority getPriority() {
+        return priority;
     }
 }

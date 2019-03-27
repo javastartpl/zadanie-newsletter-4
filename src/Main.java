@@ -3,7 +3,6 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class Main {
-    private static String priorityValue;
 
     public static void main(String[] args) {
 
@@ -17,19 +16,19 @@ public class Main {
 
     private static List<Task> createTasks() {
         List<Task> tasksList = new ArrayList<>();
-        tasksList.add(new Task("Zmywanie naczyn", PRIORITY.LOW));
-        tasksList.add(new Task("Nauka programowania", PRIORITY.URGENT));
-        tasksList.add(new Task("Zakupy", PRIORITY.MEDIUM));
-        tasksList.add(new Task("Oplaty rachunkow", PRIORITY.HIGH));
+        tasksList.add(new Task("Zmywanie naczyn", Priority.LOW));
+        tasksList.add(new Task("Nauka programowania", Priority.URGENT));
+        tasksList.add(new Task("Zakupy", Priority.MEDIUM));
+        tasksList.add(new Task("Oplaty rachunkow", Priority.HIGH));
         return tasksList;
     }
 
     private static String printTask(Task task) {
-        switch (task.priority) {
+        String priorityValue = null;
+        switch (task.getPriority()) {
             case LOW -> priorityValue = "Niski";
             case MEDIUM -> priorityValue = "Sredni";
-            case HIGH -> priorityValue = "Wysoki!";
-            case URGENT -> priorityValue = "Pilne!";
+            case HIGH, URGENT -> priorityValue = "Pilne!";
         }
         return priorityValue;
     }

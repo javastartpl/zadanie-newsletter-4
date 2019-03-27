@@ -1,4 +1,4 @@
-public enum PRIORITY {
+enum Priority {
     LOW,
     MEDIUM,
     HIGH,
